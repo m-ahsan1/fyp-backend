@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const blogsRoutes = require("./routes/blogsRoutes");
 const listingsRoutes = require("./routes/listingsRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes")
 const cors = require("cors");
 
 // Create an Express app
@@ -30,6 +31,7 @@ mongoose
 // create routes in the routes folder, import and add here
 app.use("/api/blogs", blogsRoutes);
 app.use("/api/listings", listingsRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 // Define the port to listen on
 const PORT = process.env.PORT || 3001;

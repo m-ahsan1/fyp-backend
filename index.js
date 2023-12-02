@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const blogsRoutes = require("./routes/blogsRoutes");
+const listingsRoutes = require("./routes/listingsRoutes");
 const cors = require("cors");
 
 // Create an Express app
@@ -20,10 +21,15 @@ app.use((req, res, next) => {
 // Aik he database use karni, no need to create multiple instead create collections in it
 mongoose
   .connect("mongodb://127.0.0.1:27017/bidding-bazaar")
-  .then(() => console.log("Database Connected!"));
+  .then(() => console.log("Database Connected!"))
+  .catch((error) => {
+    // Handle errors
+    console.error("Error:", error);
+  });
 
 // create routes in the routes folder, import and add here
 app.use("/api/blogs", blogsRoutes);
+app.use("/api/listings", listingsRoutes);
 
 // Define the port to listen on
 const PORT = process.env.PORT || 3001;

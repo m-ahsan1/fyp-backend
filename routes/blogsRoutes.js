@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const Blog = require("../models/blogsModel"); // Adjust the path based on your file structure
+const Blog = require("../models/blogsModel");
 
 // Get all blogs
 router.get("/", async (req, res) => {
   try {
     const blogs = await Blog.find();
     res.json(blogs);
+    // res.json("Hello");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

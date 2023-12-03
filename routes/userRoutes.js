@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    getAllUsers,
+    getUsers,
     getUser,
     createUser,
     updateUser,
@@ -12,7 +12,7 @@ const {
     } = require("../controllers/userController");
 
 // Get all users
-router.get("/", getAllUsers);
+router.get("/", getUsers);
 
 // Get a specific user
 router.get("/:id", getUser);

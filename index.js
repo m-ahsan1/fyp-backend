@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const blogsRoutes = require("./routes/blogsRoutes");
 const listingsRoutes = require("./routes/listingsRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes")
+<<<<<<< Updated upstream
 const userRoutes = require("./routes/userRoutes");
+=======
+const notificationRoutes = require("./routes/notificationRoutes");
+>>>>>>> Stashed changes
 const cors = require("cors");
 
 // Create an Express app
@@ -33,7 +37,11 @@ mongoose
 app.use("/api/blogs", blogsRoutes);
 app.use("/api/listings", listingsRoutes);
 app.use("/api/analytics", analyticsRoutes);
+<<<<<<< Updated upstream
 app.use("/api/users", userRoutes);
+=======
+app.use("/api/notification", notificationRoutes);
+>>>>>>> Stashed changes
 
 // Define the port to listen on
 const PORT = process.env.PORT || 3001;
